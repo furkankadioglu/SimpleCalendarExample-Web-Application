@@ -22,6 +22,23 @@ const router = new VueRouter({
 });
 
 
+router.beforeEach((to, from, next) => {
+    if (to.matched.some(record => record.name == "home")) {
+        if(storeData.state.isLoggedIn)
+        {
+            next({
+                path: '/calendar'
+              });
+        }
+        else
+        {
+            next();
+        }
+    } else {
+      next();
+    }
+  })
+  
 const store = new Vuex.Store(storeData);
 
 const app = new Vue({
