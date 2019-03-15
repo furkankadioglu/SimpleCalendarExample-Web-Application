@@ -12,5 +12,9 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('calendar');
+});
+
+Route::get('/{any}', function() {
+    return redirect("/");
 });
