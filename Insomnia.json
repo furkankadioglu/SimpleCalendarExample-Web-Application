@@ -1,0 +1,565 @@
+{
+	"_type": "export",
+	"__export_format": 3,
+	"__export_date": "2019-03-15T21:24:20.552Z",
+	"__export_source": "insomnia.desktop.app:v6.3.2",
+	"resources": [
+		{
+			"_id": "wrk_d4b26442023a49999472ee89e606608d",
+			"created": 1552075329699,
+			"description": "",
+			"modified": 1552075329699,
+			"name": "Calendar Example",
+			"parentId": null,
+			"_type": "workspace"
+		},
+		{
+			"_id": "env_abaf7f294fb14965a452a0e1be85a338",
+			"color": null,
+			"created": 1552075329751,
+			"data": {
+				"bearer_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTU1MjU2Mjk4NCwiZXhwIjoxNTUyNTY2NTg0LCJuYmYiOjE1NTI1NjI5ODQsImp0aSI6IkFlZ1U4Y3RpcEx4Nk9RbmQiLCJzdWIiOjI5LCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.S_jqvpzHgCu4MAjHgjn0v2YKEtbMs6KWwUyAyy2Ygmk",
+				"host": "127.0.0.1:8000",
+				"host_api": "127.0.0.1:8000/api",
+				"host_web": "127.0.0.1:8000"
+			},
+			"isPrivate": false,
+			"metaSortKey": 1552075329751,
+			"modified": 1552562994125,
+			"name": "New Environment",
+			"parentId": "wrk_d4b26442023a49999472ee89e606608d",
+			"_type": "environment"
+		},
+		{
+			"_id": "jar_7cbe066e659d4629a1095e9d4bb17015",
+			"cookies": [
+				{
+					"creation": "2019-03-09T20:35:27.128Z",
+					"domain": "127.0.0.1",
+					"expires": "2019-03-13T21:39:07.000Z",
+					"hostOnly": true,
+					"id": "5164093143832504",
+					"key": "XSRF-TOKEN",
+					"lastAccessed": "2019-03-13T19:39:07.852Z",
+					"maxAge": 7200,
+					"path": "/",
+					"value": "eyJpdiI6ImowcnQwcHdqTjdcLzU3VmwwMXhQQmd3PT0iLCJ2YWx1ZSI6Ilk1NEdmajgwMlZEdUJPcWVySWhXT05XXC9CN1BDUDVPYmgzaFRPRG1Cdjk4WHgyZGszbjNoS1ZFMVwvT1I3MG9QbyIsIm1hYyI6IjliYWQwMDYzNjgxNjI3YzQ1MTc5YWYwNzdkZTc3NmM2YzU2YjUwMTY2NWM1YzUyZDdhNTEwYzQxODAwNWE5ZWQifQ%3D%3D"
+				},
+				{
+					"creation": "2019-03-09T20:35:27.129Z",
+					"domain": "127.0.0.1",
+					"expires": "2019-03-13T21:39:07.000Z",
+					"hostOnly": true,
+					"httpOnly": true,
+					"id": "8331795777692668",
+					"key": "calendarexample_session",
+					"lastAccessed": "2019-03-13T19:39:07.852Z",
+					"maxAge": 7200,
+					"path": "/",
+					"value": "eyJpdiI6Im9pVmJZeTRZS2EwWHg5TGlkQmZicXc9PSIsInZhbHVlIjoiVDVNQnJ3aWFcLzVOS2FScnJVZ0tyWW53aEJCZTV1M09JajdmdTErYUFaQTJYQ2ozSzFObkdFVEtzait0czk1Qm4iLCJtYWMiOiIxMmNiZmZmMzUyNDczOWQzNGEzNGQyN2ZlYzkyODkyZmU4ZmU0MWNhMzMwNDhhNjUyOWM0NjhkZTk2OTA4YzQ0In0%3D"
+				}
+			],
+			"created": 1552075329754,
+			"modified": 1552505947852,
+			"name": "Default Jar",
+			"parentId": "wrk_d4b26442023a49999472ee89e606608d",
+			"_type": "cookie_jar"
+		},
+		{
+			"_id": "fld_e5bcf3adb02441eda4d95dd5cc36449c",
+			"created": 1552075336214,
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1552075336214,
+			"modified": 1552075336214,
+			"name": "Api",
+			"parentId": "wrk_d4b26442023a49999472ee89e606608d",
+			"_type": "request_group"
+		},
+		{
+			"_id": "fld_cd3965a3a8e94c0bac544dc0f86334f4",
+			"created": 1552155868607,
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1552155868607,
+			"modified": 1552155868607,
+			"name": "Auth",
+			"parentId": "fld_e5bcf3adb02441eda4d95dd5cc36449c",
+			"_type": "request_group"
+		},
+		{
+			"_id": "fld_0775cb53e4264cd99b3609c15d54998b",
+			"created": 1552160788329,
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1552155868557,
+			"modified": 1552160792736,
+			"name": "Calendar Events",
+			"parentId": "fld_e5bcf3adb02441eda4d95dd5cc36449c",
+			"_type": "request_group"
+		},
+		{
+			"_id": "req_a5f86d189c5946838bb76ec877b7da4f",
+			"authentication": {
+				"token": "",
+				"type": "bearer"
+			},
+			"body": {},
+			"created": 1552505881051,
+			"description": "",
+			"headers": [
+				{
+					"disabled": false,
+					"id": "pair_f5849646395e43d28bc14d943f509113",
+					"name": "Authorization",
+					"value": "Bearer {{ bearer_token  }}"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1552155868657,
+			"method": "GET",
+			"modified": 1552505949315,
+			"name": "Status",
+			"parameters": [],
+			"parentId": "fld_e5bcf3adb02441eda4d95dd5cc36449c",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ host_api  }}/status",
+			"_type": "request"
+		},
+		{
+			"_id": "req_490bf12f514c4b829015eb04188ddf23",
+			"authentication": {},
+			"body": {
+				"mimeType": "multipart/form-data",
+				"params": [
+					{
+						"id": "pair_61e56a37fc734e938a9754a5f2fbb671",
+						"name": "email",
+						"value": "admin@calendarproject.com"
+					},
+					{
+						"id": "pair_e22049d2fa1e4ba88515835392cfe94b",
+						"name": "password",
+						"value": "adminadmin"
+					}
+				]
+			},
+			"created": 1552075339071,
+			"description": "",
+			"headers": [],
+			"isPrivate": false,
+			"metaSortKey": -1552075339071,
+			"method": "POST",
+			"modified": 1552562595201,
+			"name": "Login - Admin User",
+			"parameters": [],
+			"parentId": "fld_cd3965a3a8e94c0bac544dc0f86334f4",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ host_api  }}/auth/login",
+			"_type": "request"
+		},
+		{
+			"_id": "req_60f5454ccfb74124b1cb2b807e59da85",
+			"authentication": {},
+			"body": {
+				"mimeType": "multipart/form-data",
+				"params": [
+					{
+						"id": "pair_8b60ad70b8754f878a5d6a1072ee7c8c",
+						"name": "",
+						"value": ""
+					}
+				]
+			},
+			"created": 1552155775360,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_778ee2c8db3f4f58b59887abf0374056",
+					"name": "Authorization",
+					"value": "Bearer {{ bearer_token  }}"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1552075339121,
+			"method": "POST",
+			"modified": 1552552739991,
+			"name": "Me",
+			"parameters": [],
+			"parentId": "fld_cd3965a3a8e94c0bac544dc0f86334f4",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ host_api  }}/auth/me",
+			"_type": "request"
+		},
+		{
+			"_id": "req_d19ca9fe32b14745aa6438a9e5b7131e",
+			"authentication": {},
+			"body": {
+				"mimeType": "multipart/form-data",
+				"params": [
+					{
+						"id": "pair_8b60ad70b8754f878a5d6a1072ee7c8c",
+						"name": "",
+						"value": ""
+					}
+				]
+			},
+			"created": 1552155857514,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_778ee2c8db3f4f58b59887abf0374056",
+					"name": "Authorization",
+					"value": "Bearer {{ bearer_token  }}"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1552075339171,
+			"method": "POST",
+			"modified": 1552166596353,
+			"name": "Refresh",
+			"parameters": [],
+			"parentId": "fld_cd3965a3a8e94c0bac544dc0f86334f4",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ host_api  }}/auth/refresh",
+			"_type": "request"
+		},
+		{
+			"_id": "req_6f2723c2f9b44fefa3d6c3bcf0a6db3a",
+			"authentication": {},
+			"body": {
+				"mimeType": "multipart/form-data",
+				"params": [
+					{
+						"id": "pair_8b60ad70b8754f878a5d6a1072ee7c8c",
+						"name": "",
+						"value": ""
+					}
+				]
+			},
+			"created": 1552158667655,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_3a2873c7961549d7a59f7b2d066af50f",
+					"name": "Authorization",
+					"value": "Bearer {{ bearer_token  }}"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1549911922570,
+			"method": "POST",
+			"modified": 1552257333051,
+			"name": "Logout",
+			"parameters": [],
+			"parentId": "fld_cd3965a3a8e94c0bac544dc0f86334f4",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ host_api  }}/auth/logout",
+			"_type": "request"
+		},
+		{
+			"_id": "req_0e256cf8a9634c1aa52ec2961cdb60e5",
+			"authentication": {},
+			"body": {
+				"mimeType": "multipart/form-data",
+				"params": [
+					{
+						"id": "pair_61e56a37fc734e938a9754a5f2fbb671",
+						"name": "email",
+						"value": "adm22in@calendarproject.com"
+					},
+					{
+						"id": "pair_e22049d2fa1e4ba88515835392cfe94b",
+						"name": "password",
+						"value": "adm22in"
+					},
+					{
+						"id": "pair_8b60ad70b8754f878a5d6a1072ee7c8c",
+						"name": "",
+						"value": ""
+					}
+				]
+			},
+			"created": 1552214220511,
+			"description": "",
+			"headers": [],
+			"isPrivate": false,
+			"metaSortKey": -1550993630820.5,
+			"method": "POST",
+			"modified": 1552214230717,
+			"name": "Login Fail",
+			"parameters": [],
+			"parentId": "fld_cd3965a3a8e94c0bac544dc0f86334f4",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ host_api  }}/auth/login",
+			"_type": "request"
+		},
+		{
+			"_id": "req_d60cd931e1a5414da1b2489f772775cc",
+			"authentication": {},
+			"body": {
+				"mimeType": "multipart/form-data",
+				"params": [
+					{
+						"id": "pair_61e56a37fc734e938a9754a5f2fbb671",
+						"name": "email",
+						"value": "test@test.com"
+					},
+					{
+						"id": "pair_e22049d2fa1e4ba88515835392cfe94b",
+						"name": "password",
+						"value": "testtest"
+					},
+					{
+						"id": "pair_8b60ad70b8754f878a5d6a1072ee7c8c",
+						"name": "",
+						"value": ""
+					}
+				]
+			},
+			"created": 1552257151599,
+			"description": "",
+			"headers": [],
+			"isPrivate": false,
+			"metaSortKey": -1551534484945.75,
+			"method": "POST",
+			"modified": 1552423892441,
+			"name": "Login - Test User",
+			"parameters": [],
+			"parentId": "fld_cd3965a3a8e94c0bac544dc0f86334f4",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ host_api  }}/auth/login",
+			"_type": "request"
+		},
+		{
+			"_id": "req_24e9d670e9044a9da3bd137ccab2bc90",
+			"authentication": {},
+			"body": {
+				"mimeType": "multipart/form-data",
+				"params": [
+					{
+						"id": "pair_61e56a37fc734e938a9754a5f2fbb671",
+						"name": "email",
+						"value": "admin@calendarproject.com"
+					},
+					{
+						"id": "pair_e22049d2fa1e4ba88515835392cfe94b",
+						"name": "password",
+						"value": "adminadmin"
+					},
+					{
+						"id": "pair_8b60ad70b8754f878a5d6a1072ee7c8c",
+						"name": "name",
+						"value": "Admin"
+					}
+				]
+			},
+			"created": 1552423707545,
+			"description": "",
+			"headers": [],
+			"isPrivate": false,
+			"metaSortKey": -1552075339096,
+			"method": "POST",
+			"modified": 1552552698134,
+			"name": "Register",
+			"parameters": [],
+			"parentId": "fld_cd3965a3a8e94c0bac544dc0f86334f4",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ host_api  }}/auth/register",
+			"_type": "request"
+		},
+		{
+			"_id": "req_bffdd4c74f244dbfadb7094680995b2f",
+			"authentication": {
+				"token": "",
+				"type": "bearer"
+			},
+			"body": {},
+			"created": 1552160812244,
+			"description": "",
+			"headers": [
+				{
+					"disabled": false,
+					"id": "pair_f5849646395e43d28bc14d943f509113",
+					"name": "Authorization",
+					"value": "Bearer {{ bearer_token  }}"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1552160812244,
+			"method": "GET",
+			"modified": 1552221699801,
+			"name": "getEvents",
+			"parameters": [],
+			"parentId": "fld_0775cb53e4264cd99b3609c15d54998b",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ host_api  }}/calendarEvents/getEvents",
+			"_type": "request"
+		},
+		{
+			"_id": "req_bbe5fa03a46e44a19ed70d8a94c51a46",
+			"authentication": {},
+			"body": {
+				"mimeType": "multipart/form-data",
+				"params": [
+					{
+						"id": "pair_3a327fdb20df4419bf85a2a388ebf64c",
+						"name": "name",
+						"value": "Test Event Z"
+					},
+					{
+						"disabled": false,
+						"id": "pair_80d3464d20b7492aba5bf11264dc18a9",
+						"name": "date",
+						"value": "2019-03-13"
+					}
+				]
+			},
+			"created": 1552163249438,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_f5849646395e43d28bc14d943f509113",
+					"name": "Authorization",
+					"value": "Bearer {{ bearer_token  }}"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1552118075707.5,
+			"method": "POST",
+			"modified": 1552424021305,
+			"name": "Create",
+			"parameters": [],
+			"parentId": "fld_0775cb53e4264cd99b3609c15d54998b",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ host_api  }}/calendarEvents/create",
+			"_type": "request"
+		},
+		{
+			"_id": "req_3cf221ca588d41109775ce5d710ccdde",
+			"authentication": {},
+			"body": {
+				"mimeType": "multipart/form-data",
+				"params": [
+					{
+						"id": "pair_3a327fdb20df4419bf85a2a388ebf64c",
+						"name": "name",
+						"value": "Test Event XXX"
+					},
+					{
+						"disabled": false,
+						"id": "pair_80d3464d20b7492aba5bf11264dc18a9",
+						"name": "date",
+						"value": "2018-01-05"
+					}
+				]
+			},
+			"created": 1552221644107,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_f5849646395e43d28bc14d943f509113",
+					"name": "Authorization",
+					"value": "Bearer {{ bearer_token  }}"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1552096707439.25,
+			"method": "POST",
+			"modified": 1552562642813,
+			"name": "Update",
+			"parameters": [],
+			"parentId": "fld_0775cb53e4264cd99b3609c15d54998b",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ host_api  }}/calendarEvents/update/4",
+			"_type": "request"
+		},
+		{
+			"_id": "req_c3126033a7f14f0e91e32d70d2f8e353",
+			"authentication": {},
+			"body": {
+				"mimeType": "multipart/form-data",
+				"params": []
+			},
+			"created": 1552256397743,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_f5849646395e43d28bc14d943f509113",
+					"name": "Authorization",
+					"value": "Bearer {{ bearer_token  }}"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1552086023305.125,
+			"method": "POST",
+			"modified": 1552562754673,
+			"name": "Delete",
+			"parameters": [],
+			"parentId": "fld_0775cb53e4264cd99b3609c15d54998b",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ host_api  }}/calendarEvents/delete/4",
+			"_type": "request"
+		}
+	]
+}
