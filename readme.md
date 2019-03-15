@@ -1,71 +1,67 @@
-<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
+# Calendar Project
+This is a sample code project. Made according to the task given. Some extra features have not been made due to time constraints.
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+# Task
 
-## About Laravel
+This is the code test sent to applicants for back-end developer roles. Using PHP (preferably OOP and an MVC structure), MySQL and HTML, create a simple application that will allow the user to display a list of events from a database table with three columns - id, event title and event date. Also enable the user to add, edit and delete events. The code will be judged on structure, readability and security. Using Jquery calendar [http://fullcalendar.io/](http://fullcalendar.io/) (or something similar) display these events in a calendar underneath the list of events created above.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+We are looking for a representation of good code to fulfill the mission. How you choose to approach this and in what detail is up to you. We do not however want you spending a ridiculous amount of time on this so if there is something you would have done but would time-consuminging then you can simply note this alongside the code.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+# How To Start
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- Clone project.
+- Open project folder with terminal.
+- Edit .env file with your credentials.
+- Run **"sh run.sh"** command or start manually. (it's a shell script for everything)
+- Go to localhost:8000 with your browser.
 
-## Learning Laravel
+**Base requirements**
+- PHP 7+
+- MySQL
+- Composer
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1100 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost you and your team's skills by digging into our comprehensive video library.
+**Start manually**
+composer install;
+npm install;
+php artisan migrate;
+php artisan db:seed;
+vendor/bin/phpunit --debug;
+npm run production;
+php artisan serve;
 
-## Laravel Sponsors
+**Just run server**
+> php artisan serve
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+# Project Features
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
+- Laravel 5.8 ✅
+- OOP & Eloquent ORM ✅
+- API Resources (Collections, Resource models) ✅
+- Restful API ✅
+- JWT & Bearer Auth ✅
+- Modern Frontend (VueJS) ✅
+- Shell Script for Installation ✅
+- PHPUnit & Testcases ✅
+- Security Checks (Throttle ✅, JWT ✅)
+- PSR Standarts ✅
+- Eloquent Relationships ✅
+- Eloquent mutators ✅
+- Migration Files ✅
+- Factories ✅
+- DB Seeds ✅
+- Insomnia Rest Client Support  ✅
+- Cached queries with Redis 🚫
+- Queued calendar event jobs with horizon 🚫
+- Auto generated documentation with PHPDocs 🚫
+- Notification system 🚫
+- Scheduled commands 🚫
 
-## Contributing
+**If desired, I can make the missing parts.**
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## Insomnia Export
 
-## Security Vulnerabilities
+![Example project Insomnia API](https://i.hizliresim.com/k9QDJr.png)
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-source software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## Demo Video (60 sec)
+![Demo Video](https://media.giphy.com/media/1eAv85RJxLsaIWNgHd/giphy.gif)
