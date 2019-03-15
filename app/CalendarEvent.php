@@ -24,4 +24,15 @@ class CalendarEvent extends Model
     {
        return $this->belongsTo(User::class); 
     }
+    
+    /**
+     * User Events Scope
+     *
+     * @param $query
+     * @return Query
+     */
+    public function scopeUserEvents($query)
+    {
+        return $query->where('user_id', auth()->user()->id);
+    }
 }
