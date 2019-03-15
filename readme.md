@@ -1,4 +1,4 @@
-# Calendar Project
+# Simple Calendar Example
 This is a sample code project. Made according to the task given. Some extra features have not been made due to time constraints.
 
 # Task
@@ -9,7 +9,7 @@ We are looking for a representation of good code to fulfill the mission. How you
 
 # How To Start
 
-- Clone project.
+- Clone the project.
 - Open project folder with terminal.
 - Edit .env file with your credentials.
 - Run **"sh run.sh"** command or start manually. (it's a shell script for everything)
@@ -18,6 +18,7 @@ We are looking for a representation of good code to fulfill the mission. How you
 **Base requirements**
 - PHP 7+
 - MySQL
+- NPM / Yarn
 - Composer
 
 
@@ -33,7 +34,7 @@ php artisan serve;
 **Just run server**
 > php artisan serve
 
-# Project Features
+# Project Features & TODO
 
 - Laravel 5.8 ✅
 - OOP & Eloquent ORM ✅
@@ -52,7 +53,7 @@ php artisan serve;
 - DB Seeds ✅
 - Insomnia Rest Client Support  ✅
 - Cached queries with Redis 🚫
-- Queued calendar event jobs with horizon 🚫
+- Queued calendar event jobs with Horizon 🚫
 - Auto generated documentation with PHPDocs 🚫
 - Notification system 🚫
 - Scheduled commands 🚫
@@ -62,6 +63,8 @@ php artisan serve;
 ## Insomnia Export
 
 ![Example project Insomnia API](https://user-images.githubusercontent.com/5060068/54467053-cefd9280-4793-11e9-988b-0d1ca961f7dc.png)
+
+Insomnia export is in the project root directory. (Insomnia.json) You can import your insomnia client.
 
 ## Demo Video (60 sec)
 ![Demo Video](https://media.giphy.com/media/1eAv85RJxLsaIWNgHd/giphy.gif)
