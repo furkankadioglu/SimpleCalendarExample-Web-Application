@@ -1,3 +1,5 @@
+![Demo Video](https://media.giphy.com/media/1eAv85RJxLsaIWNgHd/giphy.gif)
+
 # Simple Calendar Example
 This is a sample code project. Made according to the task given. Some extra features have not been made due to time constraints.
 
@@ -58,7 +60,7 @@ php artisan serve;
 - Notification system 🚫
 - Scheduled commands 🚫
 
-**If desired, I can make the missing parts.**
+**If desired, I can make the missing parts.** 
 
 ## Insomnia Export
 
@@ -66,5 +68,3 @@ php artisan serve;
 
 Insomnia export is in the project root directory. (Insomnia.json) You can import your [insomnia](insomnia.rest) client.
 
-## Demo Video (60 sec)
-![Demo Video](https://media.giphy.com/media/1eAv85RJxLsaIWNgHd/giphy.gif)
