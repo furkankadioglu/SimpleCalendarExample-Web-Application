@@ -32,3 +32,5 @@ const app = new Vue({
         MainApp
     }
 });
+
+require("../sass/fullcalendar.css");
