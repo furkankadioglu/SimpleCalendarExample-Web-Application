@@ -9,6 +9,7 @@ use App\Http\Requests\CalendarEventCreateRequest;
 use Validator;
 use App\CalendarEvent;
 use App\Http\Resources\CalendarEventResource;
+use Cache;
 
 class CalendarEventController extends Controller
 {
@@ -29,11 +30,16 @@ class CalendarEventController extends Controller
      */
     public function getEvents()
     {
-        // Time consumer TODO: Save this response to cache for forever. 
-        
+        $events = Cache::get(auth()->user()->id.":calendarEvents");
+        if(!$events) 
+        {
+            $events = auth()->user()->calendarEvents;
+            Cache::forever(auth()->user()->id.":calendarEvents", $events);
+        }
+
         return [
             "success" => true,
-            "payload" => new CalendarEventsCollection(auth()->user()->calendarEvents)
+            "payload" => new CalendarEventsCollection($events)
         ];
     }
 
@@ -64,7 +70,7 @@ class CalendarEventController extends Controller
         $calendarEvent->user_id = auth()->user()->id;
         $calendarEvent->save();
 
-        // Time consumer TODO: Destroy the main getEvents cache
+        Cache::pull(auth()->user()->id.":calendarEvents");
 
         return [
             "success" => true,
@@ -99,7 +105,7 @@ class CalendarEventController extends Controller
         $calendarEvent->user_id = auth()->user()->id;
         $calendarEvent->save();
 
-        // Time consumer TODO: Destroy the main getEvents cache
+        Cache::pull(auth()->user()->id.":calendarEvents");
 
         return [
             "success" => true,
@@ -130,6 +136,7 @@ class CalendarEventController extends Controller
         }
 
         $calendarEvent->delete();
+        Cache::pull(auth()->user()->id.":calendarEvents");
 
         return [
             "success" => true
