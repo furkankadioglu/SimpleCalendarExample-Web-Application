@@ -66,5 +66,5 @@ php artisan serve;
 
 ![Example project Insomnia API](https://user-images.githubusercontent.com/5060068/54467053-cefd9280-4793-11e9-988b-0d1ca961f7dc.png)
 
-Insomnia export is in the project root directory. (Insomnia.json) You can import your [insomnia](insomnia.rest) client.
+Insomnia export is in the project root directory. (Insomnia.json) You can import your [insomnia](https://insomnia.rest/) client.
 
