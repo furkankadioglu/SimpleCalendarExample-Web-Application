@@ -100,6 +100,18 @@ class CalendarEventController extends Controller
             ];
         }
 
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|min:6|max:90',
+            'date' => 'required|date_format:Y-m-d',
+        ]);
+
+        if ($validator->fails()) {
+            return [
+                'success' => false,
+                'errors' => $validator->errors()
+            ];
+        }
+
         $calendarEvent->name = request()->name;
         $calendarEvent->date = request()->date;
         $calendarEvent->user_id = auth()->user()->id;
