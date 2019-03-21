@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Resources\UserResource;
 use Validator;
 use App\User;
-
+use Hash;
 class AuthController extends Controller
 {
     /**
@@ -29,19 +29,36 @@ class AuthController extends Controller
     {
         $credentials = request(['email', 'password']);
 
-        if (! $token = auth()->attempt($credentials)) {
-            return response()->json([
-                'success' => false,
-                'errors' => [
-                    "unauthorized" => [
-                            'error_code' => 401,
-                            'error_description' => 'Unauthorized, wrong credentials.'
-                    ]
+        $email = request()->email;
+        $password = request()->password;
+
+        $user = User::where('email', '=', $email)->first();
+
+        $unauthorizedResponse = [
+            'success' => false,
+            'errors' => [
+                "unauthorized" => [
+                        'error_code' => 401,
+                        'error_description' => 'Unauthorized, wrong credentials.'
                 ]
-            ], 401);
+            ]
+        ];
+
+        if($user)
+        {
+            if(!Hash::check($password, $user->password)) {
+                return response()->json($unauthorizedResponse, 401);
+            }
+
+            if (! $token = auth()->attempt($credentials)) {
+                return response()->json($unauthorizedResponse, 401);
+            }
+    
+            return $this->respondWithToken($token);
         }
 
-        return $this->respondWithToken($token);
+        return response()->json($unauthorizedResponse, 401);
+        
     }
 
 
