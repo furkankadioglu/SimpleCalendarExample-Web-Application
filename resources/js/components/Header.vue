@@ -5,7 +5,7 @@
                 <router-link class="navbar-brand" to="/">Calendar Example</router-link>
             </template>
             <template v-else>
-                <router-link class="navbar-brand" to="/calendar">Calendar Example</router-link>
+                <router-link class="navbar-brand" to="/">Calendar Example</router-link>
             </template>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
