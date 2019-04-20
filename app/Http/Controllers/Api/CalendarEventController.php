@@ -59,8 +59,9 @@ class CalendarEventController extends Controller
     public function create(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'name' => 'required|min:6|max:90',
-            'date' => 'required|date_format:Y-m-d',
+            'name' => 'required|min:2|max:90',
+            'start' => 'required|date_format:Y-m-d',
+            'end' => 'required|date_format:Y-m-d|after:start',
         ]);
 
         if ($validator->fails()) {
@@ -72,7 +73,8 @@ class CalendarEventController extends Controller
 
         $calendarEvent = new CalendarEvent;
         $calendarEvent->name = request()->name;
-        $calendarEvent->date = request()->date;
+        $calendarEvent->start = request()->start;
+        $calendarEvent->end = request()->end;
         $calendarEvent->user_id = auth()->user()->id;
         $calendarEvent->save();
 
@@ -107,8 +109,9 @@ class CalendarEventController extends Controller
         }
 
         $validator = Validator::make($request->all(), [
-            'name' => 'required|min:6|max:90',
-            'date' => 'required|date_format:Y-m-d',
+            'name' => 'required|min:2|max:90',
+            'start' => 'required|date_format:Y-m-d',
+            'end' => 'required|date_format:Y-m-d|after:start',
         ]);
 
         if ($validator->fails()) {
@@ -119,7 +122,8 @@ class CalendarEventController extends Controller
         }
 
         $calendarEvent->name = request()->name;
-        $calendarEvent->date = request()->date;
+        $calendarEvent->start = request()->start;
+        $calendarEvent->end = request()->end;
         $calendarEvent->user_id = auth()->user()->id;
         $calendarEvent->save();
 
