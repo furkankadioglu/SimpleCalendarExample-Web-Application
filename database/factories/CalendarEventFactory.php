@@ -18,6 +18,7 @@ use Faker\Generator as Faker;
 $factory->define(CalendarEvent::class, function (Faker $faker) {
     return [
         'name' => $faker->name,
-        'date' => $faker->date,
+        'start' => $faker->date,
+        'end' => $faker->date,
     ];
 });

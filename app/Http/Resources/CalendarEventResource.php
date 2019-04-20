@@ -18,8 +18,8 @@ class CalendarEventResource extends JsonResource
         return [
             "id" => $this->id,
             "title" => $this->name,
-            "start" => $this->date,
-            "end" => $this->date,
+            "start" => $this->start,
+            "end" => $this->end,
         ];
     }
 }

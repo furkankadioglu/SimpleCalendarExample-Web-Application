@@ -12,7 +12,7 @@ class CalendarEvent extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'date', 'user_id',
+        'name', 'start', 'end', 'user_id',
     ];
 
     /**

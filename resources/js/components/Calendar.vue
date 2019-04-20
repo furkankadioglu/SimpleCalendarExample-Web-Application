@@ -31,6 +31,7 @@ import axios from 'axios';
             ],
             selectable: true,
             selectHelper: true,
+            editable: true,
             select: function(start, end) {
                 var title = prompt('Event Title:');
                 var eventData;
@@ -42,7 +43,8 @@ import axios from 'axios';
                     };
                     axios.post('/api/calendarEvents/create', {
                         name: title,
-                        date: start
+                        start: start,
+                        end: end
                     });
                     $('#calendar').fullCalendar('renderEvent', eventData, true); // stick? = true
                 }
@@ -62,7 +64,8 @@ import axios from 'axios';
 
                     axios.post('/api/calendarEvents/update/' + event.id, {
                         name: event.title,
-                        date: event.start
+                        start: event.start,
+                        end: event.end,
                     });
 
                     $('#calendar').fullCalendar('updateEvent', event)

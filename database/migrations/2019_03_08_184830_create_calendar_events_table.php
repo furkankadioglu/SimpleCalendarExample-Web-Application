@@ -16,7 +16,9 @@ class CreateCalendarEventsTable extends Migration
         Schema::create('calendar_events', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name', 90)->default('Unnamed Event');
-            $table->date('date');
+            $table->dateTime('start');
+            $table->dateTime('end');
+            $table->boolean('allDay')->default(false);
             $table->integer('user_id')->unsigned();
             $table->timestamps();
         });
