@@ -67,9 +67,13 @@ class CalendarEventTest extends TestCase
 
 
     /** @test */
-    public function editEvent()
+    public function editEvent($token = null)
     {
-        $token = $this->log_in();
+        if(!$token)
+        {
+            $token = $this->log_in();
+        }
+
         $event_id = $this->createEvent($token);
 
         $postParameters = [
