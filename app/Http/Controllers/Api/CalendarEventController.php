@@ -61,7 +61,7 @@ class CalendarEventController extends Controller
         $validator = Validator::make($request->all(), [
             'name' => 'required|min:2|max:90',
             'start' => 'required|date_format:Y-m-d',
-            'end' => 'required|date_format:Y-m-d|after:start',
+            'end' => 'required|date_format:Y-m-d|after_or_equal:start',
         ]);
 
         if ($validator->fails()) {
@@ -111,7 +111,7 @@ class CalendarEventController extends Controller
         $validator = Validator::make($request->all(), [
             'name' => 'required|min:2|max:90',
             'start' => 'required|date_format:Y-m-d',
-            'end' => 'required|date_format:Y-m-d|after:start',
+            'end' => 'required|date_format:Y-m-d|after_or_equal:start',
         ]);
 
         if ($validator->fails()) {
