@@ -31,3 +31,15 @@ export function getLoggedinUser(){
 
     return JSON.parse(userStr);
 }
+
+export function isJwtExpired(storeData) {
+    // JWT Check expire.
+    if(storeData.state.currentUser)
+    {
+        if(Date.now() > (storeData.state.currentUser.date - 50000))
+        {
+            return true;
+        }
+    }
+    return false;
+}

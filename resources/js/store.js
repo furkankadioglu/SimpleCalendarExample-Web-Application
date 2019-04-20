@@ -40,7 +40,7 @@ export default {
             state.auth_error = null;
             state.isLoggedin = true;
             state.loading = false;
-            state.currentUser = Object.assign({}, payload.payload.user, {token: payload.payload.access_token, expires_in: payload.payload.expires_in});
+            state.currentUser = Object.assign({}, payload.payload.user, {token: payload.payload.access_token, expires_in: payload.payload.expires_in, date: Date.now() + (payload.payload.expires_in * 1000)});
 
             localStorage.setItem("user", JSON.stringify(state.currentUser));
         },
