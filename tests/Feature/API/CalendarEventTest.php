@@ -47,6 +47,7 @@ class CalendarEventTest extends TestCase
             "name" => "PHPUnit Test Event",
             "start" => "2045-01-01",
             "end" => "2045-01-01",
+            "allDay" => true
         ];
 
         $headerParameters = [
@@ -79,7 +80,8 @@ class CalendarEventTest extends TestCase
         $postParameters = [
             "name" => "PHPUnit Test Event Edited",
             "start" => "2045-01-02",
-            "end" => "2045-01-02"
+            "end" => "2045-01-02",
+            "allDay" => true
         ];
 
         $headerParameters = [
@@ -96,7 +98,7 @@ class CalendarEventTest extends TestCase
                 "id" => $event_id,
                 "title" => "PHPUnit Test Event Edited",
                 "start" => "2045-01-02",
-                "end"   => "2045-01-02"
+                "end"   => "2045-01-02",
             ]
         ]);
     }
