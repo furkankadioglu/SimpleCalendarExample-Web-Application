@@ -30,6 +30,12 @@ class CalendarEventController extends Controller
      */
     public function getEvents()
     {
+        if(auth()->payload()->get("isBanned")){
+            return [
+                'success' => false
+            ];
+        }
+
         $events = Cache::get(auth()->user()->id.":calendarEvents");
         if(!$events) 
         {
