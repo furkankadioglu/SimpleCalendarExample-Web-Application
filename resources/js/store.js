@@ -10,6 +10,9 @@ export default {
         auth_error: null,
         reg_error:null,
         registeredUser: null,
+
+        calendarEventFocused: null,
+        calendarFocus: false
     },
     getters: {
         isLoading(state){
@@ -29,6 +32,12 @@ export default {
         },
         registeredUser(state){
             return state.registeredUser; 
+        },
+        calendarEventFocused(state){
+            return state.calendarEventFocused; 
+        },
+        calendarFocus(state){
+            return state.calendarFocus; 
         },
     },
     mutations: {
@@ -60,6 +69,20 @@ export default {
         registerFailed(state, payload){
             state.reg_error = payload.errors;
         },
+        calendarFocusedAnEvent(state)
+        {
+            if(state.calendarFocus)
+            {
+                state.calendarEventFocused = null;
+                state.calendarFocus = false;
+            }
+            else
+            {
+                state.calendarEventFocused = state;
+                state.calendarFocus = true;
+            }
+            console.log(state); // XXX
+        }
     },
     actions: {
         login(context){
