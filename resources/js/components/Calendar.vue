@@ -1,8 +1,5 @@
 <template>
         <div class="col-12" id="calendar">
-        <h1 class="text-center">Hello {{ currentUser.name }}</h1>
-        <br/>
-
         <FullCalendar
             class='calendar'
             ref="fullCalendar"
@@ -13,9 +10,10 @@
                 right: ''
             }"
             :plugins="calendarPlugins"
-            :selectable="true"
+            :selectable="calendarSelectable"
             :editable="true"
             :weekends="calendarWeekends"
+            :height="windowHeight - 85"
             :events="calendarEvents"
             :eventSources="calendarEventSources"
             @dateClick="calendarDateClick"
@@ -24,6 +22,7 @@
             @eventRender="calendarEventRender"
             @select="calendarSelectDate"
         />
+        <EventDetail />
         </div>
 </template>
 
@@ -36,13 +35,23 @@ import FullCalendar from '@fullcalendar/vue'
 import dayGridPlugin from '@fullcalendar/daygrid'
 import timeGridPlugin from '@fullcalendar/timegrid'
 import interactionPlugin from '@fullcalendar/interaction'
+import EventDetail from './EventDetail.vue';
 
  export default {
     components: {
-        FullCalendar // make the <FullCalendar> tag available
+        FullCalendar, // make the <FullCalendar> tag available
+        EventDetail
     },
     mounted() {
-        axios.defaults.headers.common['Authorization'] =  'Bearer ' + this.$store.getters.currentUser.token        
+        axios.defaults.headers.common['Authorization'] =  'Bearer ' + this.$store.getters.currentUser.token,
+        this.$nextTick(function() {
+            window.addEventListener('resize', this.getWindowWidth);
+            window.addEventListener('resize', this.getWindowHeight);
+
+            //Init
+            this.getWindowWidth()
+            this.getWindowHeight()
+        })
     },
     data: function() {
         return {
@@ -70,10 +79,17 @@ import interactionPlugin from '@fullcalendar/interaction'
                     color: 'green'
                 },
             ],
-            selectable: true
+            windowWidth: 0,
+            windowHeight: 0,
         }
     },
     methods: {
+        getWindowWidth(event) {
+            this.windowWidth = document.documentElement.clientWidth;
+        },
+        getWindowHeight(event) {
+            this.windowHeight = document.documentElement.clientHeight;
+        },
         toggleWeekends() {
             this.calendarWeekends = !this.calendarWeekends // update a property
         },
@@ -107,7 +123,8 @@ import interactionPlugin from '@fullcalendar/interaction'
         },
         calendarEventClick(arg) {
             console.log("Log: Event clicked.", arg)
-            // var event = arg.event;
+            var event = arg.event;
+            this.$store.commit("calendarFocusedAnEvent", event); // XXX
             // if (event.title) {
             //         var title = prompt('Event Title:', event.title);
             //         var eventData;
@@ -137,8 +154,18 @@ import interactionPlugin from '@fullcalendar/interaction'
     computed:{
         currentUser(){
             return this.$store.getters.currentUser
+        },
+        currentEventFocused(){
+            return this.$store.getters.calendarEventFocused
+        },
+        calendarFocus(){
+            return this.$store.getters.calendarFocus
         }
-    } 
+    },
+    beforeDestroy() {
+        window.removeEventListener('resize', this.getWindowWidth);
+        window.removeEventListener('resize', this.getWindowHeight);
+    }
  }
  </script>
 

@@ -69,7 +69,7 @@ export default {
         registerFailed(state, payload){
             state.reg_error = payload.errors;
         },
-        calendarFocusedAnEvent(state)
+        calendarFocusedAnEvent(state, payload)
         {
             if(state.calendarFocus)
             {
@@ -78,10 +78,9 @@ export default {
             }
             else
             {
-                state.calendarEventFocused = state;
+                state.calendarEventFocused = payload;
                 state.calendarFocus = true;
             }
-            console.log(state); // XXX
         }
     },
     actions: {
