@@ -1,6 +1,11 @@
-<template>
-    <div id="eventDetail" class="eventDetail">
-        XXXX
+<template class="eventDetail">
+    <div v-if="calendarFocus">
+        BBB {{this.calendarFocus}}
+        {{this.calendarEventFocused.title}}
+    </div>
+    <div v-else>
+        CCC {{this.calendarFocus}}
+        {{this.calendarEventFocused}}
     </div>
 </template>
 
@@ -10,20 +15,26 @@ import axios from 'axios';
 import moment from 'moment';
 
  export default {
-    mounted() {
-        axios.defaults.headers.common['Authorization'] =  'Bearer ' + this.$store.getters.currentUser.token        
-    },
     data: function() {
         return {
             event: null
         }
-    }
+    },
+    computed:{
+        calendarEventFocused(){
+            return this.$store.getters.calendarEventFocused
+        },
+        calendarFocus(){
+            return this.$store.getters.calendarFocus
+        }
+
+    } 
  }
  </script>
 
  <style>
-#eventDetail
+.eventDetail
 {
-    float: left;
+    display: none;
 }
  </style>
