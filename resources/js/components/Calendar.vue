@@ -109,7 +109,7 @@ import EventDetail from './EventDetail.vue';
             if (title) {
 
                 eventData = {
-                    name: title,
+                    title: title,
                     start: start,
                     end: end,
                 };
@@ -132,7 +132,7 @@ import EventDetail from './EventDetail.vue';
             //         if (title) {
 
             //             eventData = {
-            //                 name: title,
+            //                 title: title,
             //                 start: event.start,
             //                 end: event.end,
             //             }
