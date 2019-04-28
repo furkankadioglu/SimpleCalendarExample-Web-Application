@@ -56,7 +56,7 @@ router.beforeEach((to, from, next) => {
         if(storeData.state.isLoggedIn)
         {
             next({
-                path: '/calendar'
+                path: '/dashboard'
               });
         }
         else
