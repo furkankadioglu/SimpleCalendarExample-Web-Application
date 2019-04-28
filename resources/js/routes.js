@@ -1,7 +1,8 @@
 import Home from './components/Home.vue';
 import Register from './components/Register.vue';
 import Login from './components/Login.vue';
-import Calendar from './components/Calendar.vue';
+import Calendar from './pages/Calendar.vue';
+import Dashboard from './pages/Dashboard.vue';
 
 export const routes = [
     {
@@ -23,6 +24,14 @@ export const routes = [
         path: '/calendar',
         name: 'calendar',
         component: Calendar,
+        meta: {
+            requiresAuth: true
+        },
+    },
+    {
+        path: '/dashboard',
+        name: 'dashboard',
+        component: Dashboard,
         meta: {
             requiresAuth: true
         },

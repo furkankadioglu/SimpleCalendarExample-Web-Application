@@ -23,6 +23,9 @@
                     </template>
                     <template v-else>
                         <li>
+                            <router-link to="/dashboard" class="nav-link">Dashboard</router-link>
+                        </li>
+                        <li>
                             <router-link to="/calendar" class="nav-link">Calendar</router-link>
                         </li>
                         <li class="nav-item dropdown">
