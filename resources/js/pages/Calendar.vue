@@ -35,7 +35,7 @@ import FullCalendar from '@fullcalendar/vue'
 import dayGridPlugin from '@fullcalendar/daygrid'
 import timeGridPlugin from '@fullcalendar/timegrid'
 import interactionPlugin from '@fullcalendar/interaction'
-import EventDetail from './EventDetail.vue';
+import EventDetail from '../components/EventDetail.vue';
 
  export default {
     components: {
@@ -62,6 +62,8 @@ import EventDetail from './EventDetail.vue';
             ],
             calendarWeekends: true,
             calendarSelectable: true,
+            copiedCalendarEvents : [],
+            preparedCalendarEvents: [],
             calendarEvents: [ // initial event data
                 { title: 'Event Now', start: new Date() }
             ],
