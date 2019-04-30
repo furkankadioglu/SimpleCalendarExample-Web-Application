@@ -28,7 +28,7 @@ const store = new Vuex.Store(storeData);
 axios.interceptors.request.use(function (config) {
         console.log(config);
         return config;
-    }, 
+    },
     function (error) {
         console.log("HATA");
         return Promise.reject(error);
@@ -51,7 +51,7 @@ router.beforeEach((to, from, next) => {
     }
 
     // Redirect if logged in to calendar.
-    if (to.matched.some(record => record.name == "home")) 
+    if (to.matched.some(record => record.name === "home"))
     {
         if(storeData.state.isLoggedIn)
         {
@@ -63,13 +63,13 @@ router.beforeEach((to, from, next) => {
         {
             next();
         }
-    } 
-    else 
+    }
+    else
     {
         next();
     }
 });
-  
+
 
 const app = new Vue({
     el: '#app',

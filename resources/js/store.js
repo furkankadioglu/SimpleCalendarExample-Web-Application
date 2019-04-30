@@ -1,5 +1,4 @@
 import {getLoggedinUser} from './partials/auth';
-import axios from 'axios';
 const user = getLoggedinUser();
 
 export default {
@@ -12,40 +11,44 @@ export default {
         registeredUser: null,
 
         calendarEventFocused: null,
-        calendarFocus: false
+        calendarFocus: false,
+        isSidebarOpened: false
     },
     getters: {
-        isLoading(state){
+        isLoading(state) {
             return state.loading;
         },
-        isLoggedin(state){
+        isLoggedin(state) {
             return state.isLoggedin;
         },
-        currentUser(state){
+        currentUser(state) {
             return state.currentUser;
         },
-        authError(state){
+        authError(state) {
             return state.auth_error;
         },
-        regError(state){
-            return state.reg_error; 
+        regError(state) {
+            return state.reg_error;
         },
-        registeredUser(state){
-            return state.registeredUser; 
+        registeredUser(state) {
+            return state.registeredUser;
         },
-        calendarEventFocused(state){
-            return state.calendarEventFocused; 
+        calendarEventFocused(state) {
+            return state.calendarEventFocused;
         },
-        calendarFocus(state){
-            return state.calendarFocus; 
+        calendarFocus(state) {
+            return state.calendarFocus;
         },
+        isSidebarOpened(state) {
+            return state.isSidebarOpened;
+        }
     },
     mutations: {
-        login(state){
+        login(state) {
             state.loading = true;
             state.auth_error = null;
         },
-        loginSuccess(state, payload){
+        loginSuccess(state, payload) {
             state.auth_error = null;
             state.isLoggedin = true;
             state.loading = false;
@@ -53,24 +56,23 @@ export default {
 
             localStorage.setItem("user", JSON.stringify(state.currentUser));
         },
-        loginFailed(state, payload){
-            state.loading = false; 
+        loginFailed(state, payload) {
+            state.loading = false;
             state.auth_error = payload.errors;
         },
-        logout(state){
+        logout(state) {
             localStorage.removeItem("user");
             state.isLoggedin = false;
             state.currentUser = null;
         },
-        registerSuccess(state, payload){
+        registerSuccess(state, payload) {
             state.reg_error = null;
             state.registeredUser = payload.payload.user;
         },
-        registerFailed(state, payload){
+        registerFailed(state, payload) {
             state.reg_error = payload.errors;
         },
-        calendarFocusedAnEvent(state, payload)
-        {
+        calendarFocusedAnEvent(state, payload) {
             if(state.calendarFocus)
             {
                 state.calendarEventFocused = null;
@@ -81,9 +83,15 @@ export default {
                 state.calendarEventFocused = payload;
                 state.calendarFocus = true;
             }
+        },
+        CHANGE_SIDEBAR_STATE_TO( state, to ) {
+            state.isSidebarOpened = to;
         }
     },
     actions: {
+        changeSidebarState( {commit}, to ) {
+            commit('CHANGE_SIDEBAR_STATE_TO', to);
+        },
         login(context){
             context.commit("login");
         }

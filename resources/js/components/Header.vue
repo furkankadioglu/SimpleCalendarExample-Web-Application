@@ -43,7 +43,7 @@
                 </div>
             </div>
         </nav>
-        <div class="navbar navbar-expand-md navbar-light navbar-sub mb-4">
+        <div class="navbar navbar-expand-md navbar-light navbar-sub">
             <div class="container">
                 asdasdsa
             </div>

@@ -1,28 +1,29 @@
 <template>
         <div class="col-12" id="calendar">
-        <FullCalendar
-            class='calendar'
-            ref="fullCalendar"
-            defaultView="dayGridMonth"
-            :header="{
-                left: '',
-                center: '',
-                right: ''
-            }"
-            :plugins="calendarPlugins"
-            :selectable="calendarSelectable"
-            :editable="true"
-            :weekends="calendarWeekends"
-            :height="windowHeight - 85"
-            :events="calendarEvents"
-            :eventSources="calendarEventSources"
-            @dateClick="calendarDateClick"
-            @eventClick="calendarEventClick"
-            @eventDrop="calendarEventDrop"
-            @eventRender="calendarEventRender"
-            @select="calendarSelectDate"
-        />
-        <EventDetail />
+            <FullCalendar
+                class='calendar'
+                :class="{'sidebarOpen': isSidebarOpened}"
+                ref="fullCalendar"
+                defaultView="dayGridMonth"
+                :header="{
+                    left: '',
+                    center: '',
+                    right: ''
+                }"
+                :plugins="calendarPlugins"
+                :selectable="calendarSelectable"
+                :editable="true"
+                :weekends="calendarWeekends"
+                :height="windowHeight - 85"
+                :events="calendarEvents"
+                :eventSources="calendarEventSources"
+                @dateClick="calendarDateClick"
+                @eventClick="calendarEventClick"
+                @eventDrop="calendarEventDrop"
+                @eventRender="calendarEventRender"
+                @select="calendarSelectDate"
+            />
+            <EventDetail :isOpened="isSidebarOpened"/>
         </div>
 </template>
 
@@ -121,12 +122,13 @@ import EventDetail from '../components/EventDetail.vue';
             }
         },
         calendarDateClick(arg) {
-            console.log("Log: Date clicked.", arg)            
+            console.log("Log: Date clicked.", arg)
         },
         calendarEventClick(arg) {
-            console.log("Log: Event clicked.", arg)
+            console.log("Log: Event clicked.", arg);
             var event = arg.event;
             this.$store.commit("calendarFocusedAnEvent", event); // XXX
+            this.$store.dispatch('changeSidebarState', true);
             // if (event.title) {
             //         var title = prompt('Event Title:', event.title);
             //         var eventData;
@@ -162,6 +164,10 @@ import EventDetail from '../components/EventDetail.vue';
         },
         calendarFocus(){
             return this.$store.getters.calendarFocus
+        },
+        isSidebarOpened() {
+            console.log(this.$store.getters.isSidebarOpened);
+            return this.$store.getters.isSidebarOpened;
         }
     },
     beforeDestroy() {
@@ -185,4 +191,18 @@ import EventDetail from '../components/EventDetail.vue';
     font-weight: bold;
     display: block;
  }
+
+    #calendar {
+        position: relative;
+        width: 100%;
+    }
+
+    .calendar {
+        width: 100%;
+        transition: width 300ms ease-out;
+    }
+
+    .sidebarOpen {
+        width: calc( 100% - 250px );
+    }
  </style>
