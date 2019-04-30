@@ -6,7 +6,7 @@
             defaultView="dayGridMonth"
             :header="{
                 left: '',
-                center: 'title',
+                center: '',
                 right: ''
             }"
             :plugins="calendarPlugins"
