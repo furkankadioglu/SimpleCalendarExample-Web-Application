@@ -44,7 +44,7 @@ class CalendarEventTest extends TestCase
         }
 
         $postParameters = [
-            "title" => "PHPUnit Test Event",
+            "name" => "PHPUnit Test Event",
             "start" => "2045-01-01",
             "end" => "2045-01-01",
             "allDay" => true
@@ -78,7 +78,7 @@ class CalendarEventTest extends TestCase
         $event_id = $this->createEvent($token);
 
         $postParameters = [
-            "title" => "PHPUnit Test Event Edited",
+            "name" => "PHPUnit Test Event Edited",
             "start" => "2045-01-02",
             "end" => "2045-01-02",
             "allDay" => true
