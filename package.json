@@ -31,7 +31,7 @@
         "@fullcalendar/vue": "^4.1.0",
         "fullcalendar": "^3.10.0",
         "fullcalendar-scheduler": "^1.9.4",
-        "moment": "^2.24.0",
+        "moment": "^2.29.4",
         "momentjs": "^2.0.0",
         "vee-validate": "^2.2.5",
         "vue-router": "^3.0.6",
